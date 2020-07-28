@@ -1,0 +1,1 @@
+Worker: nose bot.js
