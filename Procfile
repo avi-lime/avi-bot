@@ -1,1 +1,1 @@
-Worker: nose bot.js
+Worker: node bot.js
