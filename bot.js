@@ -7,6 +7,10 @@ const prefix = "=";
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+client.user.setActivity("Revamping the bot", {
+    type: "STREAMING",
+    url: 'http://twitch.tv/avibot'
+});
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
