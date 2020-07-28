@@ -24,14 +24,14 @@ client.on('message', msg => {
             const av = new Discord.MessageEmbed()
                 .setTitle(msg.author.name + '\'s avatar!')
                 .setImage(msg.author.displayAvatarURL({ dynamic: true, format: "png", size: 4096 }))
-                .setColor(msg.author.displayHexColor())
+                .setColor('RANDOM')
                 .setThumbnail(guild.iconURL());
             msg.channel.send(av);
         }
         const userav = new Discord.MessageEmbed()
             .setTitle(ment.first() + '\'s avatar!')
             .setImage(ment.first.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
-            .setColor(ment.first.displayHexColor())
+            .setColor('RANDOM')
             .setThumbnail(guild.iconURL());
         msg.channel.send(userav);
     }
