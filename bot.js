@@ -19,7 +19,8 @@ client.on('message', msg => {
     }
 
     if (command === 'avatar' || command === 'av') {
-        if (!msg.content.users.size) {
+        const ment = msg.mentions.users;
+        if (!ment.size) {
             const av = new Discord.MessageEmbed()
                 .setTitle(msg.author.name + '\'s avatar!')
                 .setImage(msg.author.displayAvatarURL({ dynamic: true, format: "png", size: 4096 }))
@@ -28,9 +29,9 @@ client.on('message', msg => {
             msg.channel.send(av);
         }
         const userav = new Discord.MessageEmbed()
-            .setTitle(msg.users.mentions.first() + '\'s avatar!')
-            .setImage(msg.users.mentions.first.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
-            .setColor(msg.users.mentions.first.displayHexColor())
+            .setTitle(ment.first() + '\'s avatar!')
+            .setImage(ment.first.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
+            .setColor(ment.first.displayHexColor())
             .setThumbnail(guild.iconURL());
         msg.channel.send(userav);
     }
