@@ -26,6 +26,7 @@ client.on('message', msg => {
                 .setColor('RANDOM');
             msg.channel.send(av);
         }
+        const mentionedUser = msg.mentions.users.first();
         const userav = new Discord.MessageEmbed()
             .setTitle(mentionedUser + '\'s avatar!')
             .setImage(mentionedUser.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
