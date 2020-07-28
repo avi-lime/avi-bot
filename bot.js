@@ -20,10 +20,6 @@ client.on('message', msg => {
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if (command === 'ping') {
-        msg.reply('pong!');
-    }
-
     if (command === 'avatar' || command === 'av') {
         if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()
