@@ -5,12 +5,14 @@ const client = new Discord.Client();
 const prefix = "=";
 
 client.on('ready', () => {
+    client.user.setActivity("New Updates", {
+        type: "STREAMING",
+        url: 'http://twitch.tv/avibot'
+    });
     console.log(`Logged in as ${client.user.tag}!`);
 });
-client.user.setActivity("Revamping the bot", {
-    type: "STREAMING",
-    url: 'http://twitch.tv/avibot'
-});
+
+
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
