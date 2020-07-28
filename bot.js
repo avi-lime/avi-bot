@@ -20,7 +20,7 @@ client.on('message', msg => {
 
     if (command === 'avatar' || command === 'av') {
         const mentionedUser = msg.mentions.users.first();
-        if (!ment.size) {
+        if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()
                 .setTitle(msg.author.username + '\'s avatar!')
                 .setImage(msg.author.displayAvatarURL({ dynamic: true, format: "png", size: 4096 }))
