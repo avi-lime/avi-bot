@@ -18,8 +18,7 @@ client.on('message', msg => {
         msg.reply('pong!');
     }
 
-    if (command === 'avatar' || command === 'av') {
-        const mentionedUser = msg.mentions.users.first();
+    else if (command === 'avatar' || command === 'av') {
         if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()
                 .setTitle(msg.author.username + '\'s avatar!')
