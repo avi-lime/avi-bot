@@ -25,14 +25,14 @@ client.on('message', msg => {
                 .setTitle(msg.author.name + '\'s avatar!')
                 .setImage(msg.author.displayAvatarURL({ dynamic: true, format: "png", size: 4096 }))
                 .setColor('RANDOM')
-                .setThumbnail(guild.iconURL());
+                .setThumbnail(user.guild.iconURL());
             msg.channel.send(av);
         }
         const userav = new Discord.MessageEmbed()
             .setTitle(ment.first() + '\'s avatar!')
             .setImage(ment.first.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
             .setColor('RANDOM')
-            .setThumbnail(guild.iconURL());
+            .setThumbnail(user.guild.iconURL());
         msg.channel.send(userav);
     }
 });
