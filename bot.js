@@ -47,7 +47,7 @@ client.on('message', msg => {
     }
 
     if (command === 'ping') {
-        msg.channel.send('Pong: ' + `${Date.now() - msg.createdTimestamp}` + 'ms');
+        msg.channel.send('Pong: `' + `${Date.now() - msg.createdTimestamp}` + '`ms');
     }
 });
 
