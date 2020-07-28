@@ -18,7 +18,7 @@ client.on('message', msg => {
         msg.reply('pong!');
     }
 
-    else if (command === 'avatar' || command === 'av') {
+    if (command === 'avatar' || command === 'av') {
         if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()
                 .setTitle(msg.author.username + '\'s avatar!')
@@ -32,6 +32,14 @@ client.on('message', msg => {
             .setImage(mentionedUser.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
             .setColor('RANDOM');
         return msg.channel.send(userav);
+    }
+
+    if (command === 'say') {
+        if (!args.length) {
+            return msg.channel.send('provide an arguement for me to say.');
+        }
+        msg.delete().then
+        msg.channel.send(msg.content.replace(prefix + command, " "));
     }
 });
 
