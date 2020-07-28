@@ -24,14 +24,14 @@ client.on('message', msg => {
                 .setTitle(msg.author.username + '\'s avatar!')
                 .setImage(msg.author.displayAvatarURL({ dynamic: true, format: "png", size: 4096 }))
                 .setColor('RANDOM');
-            msg.channel.send(av);
+            return msg.channel.send(av);
         }
-        const mentionedUser = msg.mentions.users.first();
+        const taggedUser = msg.mentions.users.first();
         const userav = new Discord.MessageEmbed()
-            .setTitle(mentionedUser + '\'s avatar!')
+            .setTitle(`${mentionedUser.username}` + '\'s avatar!')
             .setImage(mentionedUser.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
             .setColor('RANDOM');
-        msg.channel.send(userav);
+        return msg.channel.send(userav);
     }
 });
 
