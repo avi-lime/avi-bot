@@ -58,7 +58,7 @@ client.on('message', msg => {
 
     if (command === 'purge' || command === 'prune') {
         const amount = parseInt(args[0]) + 1;
-        if (!msg.author.hasPermission(['MANAGE_MESSAGES'])) {
+        if (!msg.guild.member(msg.author).hasPermission(['MANAGE_MESSAGES'])) {
             return msg.channel.send('you don\'t have manage message perms');
         }
         else if (isNaN(amount)) {
