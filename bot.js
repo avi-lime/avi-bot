@@ -81,11 +81,11 @@ client.on('message', msg => {
             .setDescription(`You've chosen Team ${team}! \n Good Luck!`)
             .setThumbnail(msg.author.displayAvatarURL());
         if (team === 'avi') {
-            const role = msg.guild.roles.cache.fetch('735608688441557055');
+            const role = msg.guild.roles.fetch('735608688441557055');
             guildMember.roles.add(role).then(msg.channel.send(msg));
         }
         if (team === 'angi') {
-            const role = msg.guild.roles.cache.find('735606747481374770');
+            const role = msg.guild.roles.fetch('735606747481374770');
             guildMember.roles.add(role).then(msg.channel.send(msg));
         }
         if (team !== 'avi' || team !== 'angi') {
