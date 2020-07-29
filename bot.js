@@ -76,12 +76,12 @@ client.on('message', msg => {
         if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();
         if (team === 'avi') {
-            const role = msg.guild.roles.fetch('735608688441557055');
-            msg.author.roles.add(role).then(msg.channel.send('you joined team avi'));
+            // const role = msg.guild.roles.fetch('735608688441557055');
+            msg.author.roles.add(['735608688441557055']).then(msg.channel.send('you joined team avi'));
         }
         if (team === 'angi') {
-            const role = msg.guild.roles.fetch('735606747481374770');
-            msg.author.roles.add(role).then(msg.channel.send('you joined team angi'));
+            // const role = msg.guild.roles.fetch('735606747481374770');
+            msg.author.roles.add(['735606747481374770']).then(msg.channel.send('you joined team angi'));
         }
         if (team !== 'avi' || team !== 'angi') {
             msg.channel.send('mention a valid team to join, either `angi` or `avi`');
