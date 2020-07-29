@@ -20,6 +20,8 @@ client.on('message', msg => {
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
+    // Avatar command 
+
     if (command === 'avatar' || command === 'av') {
         if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()
@@ -36,6 +38,8 @@ client.on('message', msg => {
         return msg.channel.send(userav);
     }
 
+    // say command
+
     if (command === 'say') {
         if (!args.length) {
             return msg.channel.send('provide an arguement for me to say.');
@@ -44,8 +48,23 @@ client.on('message', msg => {
         msg.channel.send(msg.content.replace(prefix + command, " "));
     }
 
+    // ping command
+
     if (command === 'ping') {
         msg.channel.send('Pong: `' + `${Date.now() - msg.createdTimestamp}` + '`ms');
+    }
+
+    // purge command
+
+    if (command === 'purge' || commmand === 'prune') {
+        const amount = parseInt(args[0]) + 1;
+        if (isNaN(amount)) {
+            return msg.channel.send('You need to give me a valid number!');
+        }
+        else if (amount < 1 || amount > 100) {
+            return msg.channel.send('Give me a number between 1 to 100');
+        }
+        msg.channel.bulkDelete(amount, true);
     }
 });
 
