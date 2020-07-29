@@ -75,7 +75,7 @@ client.on('message', msg => {
     if (command === 'join') {
         if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();
-        if (team !== 'avi' || team !== 'angi') {
+        if (team != 'avi' && team != 'angi') {
             return msg.channel.send('mention a valid team to join, either `angi` or `avi`');
         }
         if (team === 'avi') {
