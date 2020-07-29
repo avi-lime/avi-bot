@@ -76,11 +76,11 @@ client.on('message', msg => {
         if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();
         if (team === 'avi') {
-            const role = member.guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
+            const role = msg.guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
             member.roles.add(role);
         }
         if (team === 'angi') {
-            const role = member.guild.roles.cache.find(role => role.name === "天使 分隊 — angi's squad");
+            const role = msg.guild.roles.cache.find(role => role.name === "天使 分隊 — angi's squad");
             member.roles.add(role);
         }
         if (team !== 'avi' || team !== 'angi') {
