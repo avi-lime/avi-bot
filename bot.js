@@ -75,13 +75,18 @@ client.on('message', msg => {
     if (command === 'join') {
         if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();
+        const msg = new Discord.MessageEmbed()
+            .setTitle(`Team ${team}!`)
+            .setColor('PURPLE')
+            .setDescription(`You've chosen Team ${team}! \n Good Luck!`)
+            .setThumbnail(msg.author.displayAvatarURL());
         if (team === 'avi') {
             const role = msg.guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
-            member.roles.add(role);
+            guildMember.roles.add(role).then(msg.channel.send(msg));
         }
         if (team === 'angi') {
             const role = msg.guild.roles.cache.find(role => role.name === "天使 分隊 — angi's squad");
-            member.roles.add(role);
+            guildMember.roles.add(role).then(msg.channel.send(msg));
         }
         if (team !== 'avi' || team !== 'angi') {
             msg.channel.send('mention a valid team to join, either `angi` or `avi`');
