@@ -75,14 +75,14 @@ client.on('message', msg => {
     if (command === 'join') {
         if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();
-        const member = msg.author;
+        const member = msg.author();
         if (team === 'avi') {
             const role = msg.guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
-            member.addRole(role).then(msg.channel.send('you joined team avi'));
+            member.add.roles(role).then(msg.channel.send('you joined team avi'));
         }
         if (team === 'angi') {
             const role = msg.guild.roles.cache.find(role => role.name === "天使 分隊 — angi's squad");
-            member.addRole(role).then(msg.channel.send('you joined team angi'));
+            member.add.roles(role).then(msg.channel.send('you joined team angi'));
         }
         if (team !== 'avi' || team !== 'angi') {
             msg.channel.send('mention a valid team to join, either `angi` or `avi`');
