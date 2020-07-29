@@ -58,8 +58,10 @@ client.on('message', msg => {
 
     if (command === 'purge' || command === 'prune') {
         const amount = parseInt(args[0]) + 1;
-        if (!msg.author.hasPermission(['MANAGE_MESSAGES'])) return;
-        if (isNaN(amount)) {
+        if (!msg.author.hasPermission(['MANAGE_MESSAGES'])) {
+            return msg.channel.send('you don\'t have manage message perms');
+        }
+        else if (isNaN(amount)) {
             return msg.channel.send('You need to give me a valid number!');
         }
         else if (amount < 1 || amount > 100) {
