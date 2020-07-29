@@ -56,7 +56,7 @@ client.on('message', msg => {
 
     // purge command
 
-    if (command === 'purge' || commmand === 'prune') {
+    if (command === 'purge' || command === 'prune') {
         const amount = parseInt(args[0]) + 1;
         if (isNaN(amount)) {
             return msg.channel.send('You need to give me a valid number!');
