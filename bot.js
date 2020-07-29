@@ -77,11 +77,11 @@ client.on('message', msg => {
         const team = args[0].toLowerCase();
         const member = msg.author;
         if (team === 'avi') {
-            const role = guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
+            const role = msg.guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
             member.roles.add(role).then(msg.channel.send('you joined team avi'));
         }
         if (team === 'angi') {
-            const role = guild.roles.cache.find(role => role.name === "天使 分隊 — angi's squad");
+            const role = msg.guild.roles.cache.find(role => role.name === "天使 分隊 — angi's squad");
             member.roles.add(role).then(msg.channel.send('you joined team angi'));
         }
         if (team !== 'avi' || team !== 'angi') {
