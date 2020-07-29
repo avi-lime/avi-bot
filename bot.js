@@ -73,8 +73,8 @@ client.on('message', msg => {
     // join command 
 
     if (command === 'join') {
+        if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();
-        if (!team) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         if (team === 'avi') {
             const role = member.guild.roles.cache.find(role => role.name === "アビ 分隊 — avi's squad");
             member.roles.add(role);
