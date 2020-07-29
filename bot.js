@@ -101,8 +101,10 @@ client.on('message', msg => {
         }
     }
     else if (command === 'leave') {
-        const role = msg.guild.roles.cache.some(role => ["アビ 分隊 — avi's squad", "天使 分隊 — angi's squad"].includes(role.name));
-        msg.member.roles.remove(role).then(msg.channel.send('you left the team!'));
+        if (msg.member.roles.cache.has('735606747481374770'))
+            msg.member.roles.remove(['735606747481374770']).then(msg.channel.send('you left team Angi!'));
+        if (msg.member.roles.cache.has('735608688441557055'))
+            msg.member.roles.remove(['735608688441557055']).then(msg.channel.send('you left team Avi!'));
     }
 });
 
