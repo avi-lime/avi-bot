@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const prefix = "=";
 
 client.on('ready', () => {
-    client.user.setActivity("New Updates", {
+    client.user.setActivity("Happy Birthday Mint!", {
         type: "STREAMING",
         url: 'http://twitch.tv/avibot'
     });
