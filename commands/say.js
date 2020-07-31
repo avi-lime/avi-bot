@@ -1,3 +1,5 @@
+const prefix = '=';
+
 module.exports = {
     name: 'say',
     description: 'make the bot say something',
