@@ -1,4 +1,8 @@
+const { commands } = require("npm");
+
 const prefix = '=';
+const args = msg.content.slice(prefix.length).trim().split(/ +/);
+const commandName = args.shift().toLowerCase();
 
 module.exports = {
     name: 'say',
