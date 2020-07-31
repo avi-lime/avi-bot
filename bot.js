@@ -15,7 +15,7 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
-    if (!msg.content.startsWith(prefix) || msg.author.bot || msg.author.id('446220589045252096')) return;
+    if (!msg.content.startsWith(prefix) || msg.author.bot || msg.author.id === '446220589045252096') return;
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
