@@ -15,7 +15,7 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
-    if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if (!msg.content.startsWith(prefix) || msg.author.bot || msg.author.id('446220589045252096')) return;
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
@@ -105,6 +105,12 @@ client.on('message', msg => {
             msg.member.roles.remove(['735606747481374770']).then(msg.channel.send('you left team Angi!'));
         if (msg.member.roles.cache.has('735608688441557055'))
             msg.member.roles.remove(['735608688441557055']).then(msg.channel.send('you left team Avi!'));
+    }
+
+    // giveaway ping
+
+    if (command === 'gw') {
+        if ()
     }
 
 });
