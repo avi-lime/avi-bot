@@ -24,7 +24,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (msg.mentions.users.id === client.user.id) {
+    if (msg.content.match(/^<@!?(client.user.id)>$/)) {
         msg.channel.send('test');
     }
 });
