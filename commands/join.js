@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ping',
-    description: 'shows ping',
+    name: 'join',
+    description: 'to join a team',
     execute(msg, args) {
         if (!args[0]) { return msg.channel.send('mention a team to join, currently available teams are `angi` and `avi`!'); }
         const team = args[0].toLowerCase();

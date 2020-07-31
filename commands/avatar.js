@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ping',
-    description: 'shows ping',
+    name: 'avatar',
+    description: 'to see avatar',
     execute(msg, args) {
         if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()

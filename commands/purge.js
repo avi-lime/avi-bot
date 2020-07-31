@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ping',
-    description: 'shows ping',
+    name: 'purge',
+    description: 'to purge messages',
     execute(msg, args) {
         const amount = parseInt(args[0]) + 1;
         if (!msg.guild.member(msg.author).hasPermission(['MANAGE_MESSAGES'])) {

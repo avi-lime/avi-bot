@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ping',
-    description: 'shows ping',
+    name: 'say',
+    description: 'make the bot say something',
     execute(msg, args) {
         if (!args.length) {
             return msg.channel.send('provide an arguement for me to say.');
