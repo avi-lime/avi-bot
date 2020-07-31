@@ -23,7 +23,11 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
+client.on('message', msg => {
+    if (msg.content.match('/^<@(!)(client.user.id)>$/')) {
+        msg.channel.send('test');
+    }
+});
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
