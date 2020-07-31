@@ -7,7 +7,7 @@ module.exports = {
     execute(msg) {
         const args = msg.content.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
-
+        if (!msg.author.id === '454307252392951819') return;
         if (!args.length) {
             return msg.channel.send('provide an arguement for me to say.');
         }
