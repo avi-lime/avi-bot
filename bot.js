@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const prefix = "=";
 
 client.on('ready', () => {
-    client.user.setActivity("Happy Birthday Mint!", {
+    client.user.setActivity("Join the event ✔", {
         type: "STREAMING",
         url: 'http://twitch.tv/avibot'
     });
@@ -107,15 +107,6 @@ client.on('message', msg => {
             msg.member.roles.remove(['735608688441557055']).then(msg.channel.send('you left team Avi!'));
     }
 
-    if (command === 'birthday') {
-        const bday = new Discord.MessageEmbed()
-            .setTitle("Happy Birthday Linh")
-            .setColor('#aab5ee')
-            .setDescription('We all love you, Happy Birthday!')
-            .setImage('https://media.discordapp.net/attachments/649152186374291472/738419594385031199/bts.jpg?width=415&height=453')
-            .setFooter('sorry for not getting any better pic :(');
-        msg.channel.send(bday);
-    }
 });
 
 
