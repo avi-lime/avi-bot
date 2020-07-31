@@ -61,7 +61,9 @@ client.on('message', msg => {
 
     // ping command
 
-
+    if (command === 'ping') {
+        client.commands.get('ping').execute(msg, args);
+    }
 
     // purge command
 
