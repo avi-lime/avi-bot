@@ -6,7 +6,6 @@ module.exports = {
     name: 'say',
     description: 'make the bot say something',
     execute(msg, args) {
-        const args = msg.content.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
 
         if (!args.length) {
