@@ -7,5 +7,5 @@ module.exports = {
         }
         msg.delete().then
         msg.channel.send(msg.content.replace(prefix + command, " "));
-    }
-}
+    },
+};

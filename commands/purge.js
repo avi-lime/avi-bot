@@ -13,5 +13,5 @@ module.exports = {
             return msg.channel.send('Give me a number between 1 to 100');
         }
         msg.channel.bulkDelete(amount, true);
-    }
-}
+    },
+};

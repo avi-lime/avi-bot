@@ -15,5 +15,5 @@ module.exports = {
             .setImage(mentionedUser.displayAvatarURL({ dynamic: true, format: 'png', size: 4096 }))
             .setColor('ORANGE');
         return msg.channel.send(userav);
-    }
-}
+    },
+};
