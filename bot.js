@@ -110,7 +110,7 @@ client.on('message', msg => {
     // giveaway ping
 
     if (command === 'gw') {
-        if ()
+
     }
 
 });
