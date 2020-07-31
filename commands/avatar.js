@@ -1,7 +1,7 @@
 module.exports = {
     name: 'avatar',
     description: 'to see avatar',
-    execute(msg, args) {
+    execute(msg) {
         if (!msg.mentions.users.size) {
             const av = new Discord.MessageEmbed()
                 .setTitle(msg.author.username + '\'s avatar!')

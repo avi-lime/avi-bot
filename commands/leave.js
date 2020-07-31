@@ -1,7 +1,7 @@
 module.exports = {
     name: 'leave',
     description: 'to leave a team',
-    execute(msg, args) {
+    execute(msg) {
         if (msg.member.roles.cache.has('735606747481374770'))
             msg.member.roles.remove(['735606747481374770']).then(msg.channel.send('you left team Angi!'));
         if (msg.member.roles.cache.has('735608688441557055'))
