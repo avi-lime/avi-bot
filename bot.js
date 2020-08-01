@@ -23,20 +23,6 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
-    if (msg.content.startsWith('!d bump')) {
-        const cooldownAmount = 7200000;
-        const expTime = msg.createdTimestamp + cooldownAmount;
-        if (Date.now() < expTime) {
-            const timeleft = (expTime - Date.now()) / 60000;
-            return msg.channel.send(`please wait ${timeleft.toFixed(1)} before using the command again!`);
-        }
-        msg.channel.send('thanks for bumping the server, i\'ll remind to bump again in 2 hours!').then()
-        setTimeout(function () {
-            msg.channel.send('<@&735836486527615106> you can bump the server again now');
-        }, 7200000);
-    }
-});
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
