@@ -25,6 +25,12 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if (msg.content.startsWith('!d bump')) {
+        const cooldownAmount = 7200000;
+        const expTime = msg.createdTimestamp + cooldownAmount;
+        if (now < expTime) {
+            const timeleft = (expTime - now) / 60000;
+            return msg.channel.send(`please wait ${timeleft.toFixed(1)} before using the command again!`);
+        }
         msg.channel.send('thanks for bumping the server, i\'ll remind to bump again in 2 hours!').then()
         setTimeout(function () {
             msg.channel.send('<@&735836486527615106> you can bump the server again now');
