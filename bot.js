@@ -27,7 +27,7 @@ client.on('message', msg => {
     if (msg.content.startsWith('!d bump')) {
         const cooldownAmount = 7200000;
         const expTime = msg.createdTimestamp + cooldownAmount;
-        if (now < expTime) {
+        if (Date.now() < expTime) {
             const timeleft = (expTime - now) / 60000;
             return msg.channel.send(`please wait ${timeleft.toFixed(1)} before using the command again!`);
         }
