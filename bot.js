@@ -23,6 +23,12 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('message', msg => {
+    if (msg.content.startsWith('!d bump')) {
+        msg.channel.send('thanks for bumping the server, i\'ll remind to bump again in 2 hours!').then()
+        setTimeout(msg.channel.send('<@&735836486527615106> you can bump the server again now'), 3000);
+    }
+});
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
