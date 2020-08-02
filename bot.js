@@ -16,9 +16,12 @@ for (const file of commandFiles) {
 }
 
 client.on('ready', () => {
-    client.user.setActivity("Join the event ✔", {
-        type: "STREAMING",
-        url: 'http://twitch.tv/avibot'
+    client.user.setPresence({
+        status: 'dnd',
+        activity: {
+            name: 'with discord.js',
+            type: 'PLAYING'
+        }
     });
     console.log(`Logged in as ${client.user.tag}!`);
 });
