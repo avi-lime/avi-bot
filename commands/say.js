@@ -13,6 +13,6 @@ module.exports = {
             return msg.channel.send('provide an arguement for me to say.');
         }
         msg.delete().then
-        msg.channel.send.removeMentions(says);
+        msg.channel.send(msg.content.replace(prefix + commandName, " "));
     },
 };
