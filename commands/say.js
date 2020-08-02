@@ -1,3 +1,4 @@
+const { Role } = require("discord.js");
 
 const prefix = '=';
 
@@ -9,11 +10,12 @@ module.exports = {
 
         const args = msg.content.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
-
+        const mentionedRole = msg.mentions.roles;
+        const says = msg.content.replace(prefix + commandName, " ").replace(mentionedRole, mentionedRole.toString());
         if (!args.length) {
             return msg.channel.send('provide an arguement for me to say.');
         }
         msg.delete().then
-        msg.channel.send(msg.content.replace(prefix + commandName, " "));
+        msg.channel.send(says);
     },
 };
