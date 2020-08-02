@@ -8,11 +8,11 @@ module.exports = {
     execute(msg) {
         const args = msg.content.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
-        const says = msg.content.replace(prefix + commandName, " ").removeMentions();
+        const says = msg.content.replace(prefix + commandName, " ");
         if (!args.length) {
             return msg.channel.send('provide an arguement for me to say.');
         }
         msg.delete().then
-        msg.channel.send(says);
+        msg.channel.send.removeMentions(says);
     },
 };
