@@ -16,5 +16,6 @@ module.exports = {
             return msg.channel.send('provide an arguement for me to say.');
         }
         msg.delete();
+        msg.channel.send(says);
     },
 };
