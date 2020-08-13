@@ -29,7 +29,7 @@ client.on('ready', () => {
 client.on('message', msg => {
     if (msg.content.match(/^𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲 Please type \`\!captcha \[Text From Image\]\` to continue\.\nGet a different captcha by typing any command\./g) && msg.author.id === '432616859263827988') {
         const sendchan = msg.guild.channels.cache.get('739404372936622113');
-        sendchan.send(msg.content);
+        sendchan.send(`captcha in ${msg.channel}`);
     }
 
 });
