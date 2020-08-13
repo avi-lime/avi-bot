@@ -17,13 +17,21 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     client.user.setPresence({
-        status: 'dnd',
+        status: 'idle',
         activity: {
             name: 'with discord.js',
             type: 'PLAYING'
         }
     });
     console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+    if (msg.content.match(/^𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲 Please type \`\!captcha [Text From Image]\` to continue\.\nGet a different captcha by typing any command\.$/g) && msg.author.id === '432616859263827988') {
+        const sendchan = msg.guild.channels.cache.get('743355428397776897');
+        sendchan.send(msg.content);
+    }
+
 });
 
 
