@@ -17,7 +17,7 @@ module.exports = {
             message.channel.send(`added to list!`);
         }
         if (subCommand === 'show') {
-            message.channel.send(list.entries());
+            message.channel.send(list);
         }
         if (subCommand === 'delete' || subCommand === 'clear') {
             list = [];
