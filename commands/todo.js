@@ -13,14 +13,15 @@ module.exports = {
         if (subCommand === 'add') {
             const toadd = message.content.replace(prefix + commandName + ' ' + subCommand, '');
             if (!toadd) return message.channel.send(`give something to add to list`);
-            list.push(toadd);
+            var num = list.length + 1;
+            list.push(num + toadd);
             message.channel.send(`added to list!`);
         }
         if (subCommand === 'show') {
-            for (i = 0; i <= list.length; i++);
+
             const show = new Discord.MessageEmbed()
                 .setTitle(`To-do list!`)
-                .setDescription(list.map(i + list))
+                .setDescription(list)
                 .setColor(message.member.displayHexColor);
             message.channel.send(show);
         }
