@@ -21,7 +21,7 @@ module.exports = {
 
             const show = new Discord.MessageEmbed()
                 .setTitle(`To-do list!`)
-                .setDescription("```css" + list + "```")
+                .setDescription(list)
                 .setColor(message.member.displayHexColor);
             message.channel.send(show);
         }
