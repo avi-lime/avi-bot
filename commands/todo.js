@@ -17,14 +17,16 @@ module.exports = {
             message.channel.send(`added to list!`);
         }
         if (subCommand === 'show') {
-            message.channel.send(list);
+            var i = 1++;
+            const show = list.map(i + list);
+            message.channel.send(show);
         }
         if (subCommand === 'delete' || subCommand === 'clear') {
             list = [];
             message.channel.send(`list cleared!`);
         }
         if (subCommand === 'remove') {
-            const toremove = parseInt(args[1]);
+            const toremove = parseInt(args[1]) + 1;
             list.splice(toremove);
             message.channel.send(`item removed!`);
         }
