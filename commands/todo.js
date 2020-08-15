@@ -1,6 +1,6 @@
 const prefix = '=';
 const Discord = require('discord.js');
-const list = [];
+var list = [];
 
 module.exports = {
     name: 'todo',
@@ -17,12 +17,16 @@ module.exports = {
             message.channel.send(`added to list!`);
         }
         if (subCommand === 'show') {
-            message.channel.send(list);
+            message.channel.send(list.entries());
         }
         if (subCommand === 'delete' || subCommand === 'clear') {
             list = [];
             message.channel.send(`list cleared!`);
         }
-
+        if (subCommand === 'remove') {
+            const toremove = parseInt(args[1]);
+            list.splice(toremove);
+            message.channel.send(`item removed!`);
+        }
     }
 }
