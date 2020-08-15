@@ -8,7 +8,7 @@ module.exports = {
     execute(message) {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
-        const subCommand = args[1];
+        const subCommand = args[0];
 
         if (subCommand === 'add') {
             const toadd = message.content.replace(prefix + commandName + ' ' + subCommand, '');
