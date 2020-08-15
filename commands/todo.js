@@ -28,7 +28,7 @@ module.exports = {
             message.channel.send(`list cleared!`);
         }
         if (subCommand === 'remove') {
-            const toremove = parseInt(args[1]) + 1;
+            const toremove = parseInt(args[1]) - 1;
             list.splice(toremove);
             message.channel.send(`item removed!`);
         }
