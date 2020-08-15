@@ -14,14 +14,14 @@ module.exports = {
             const toadd = message.content.replace(prefix + commandName + ' ' + subCommand, '');
             if (!toadd) return message.channel.send(`give something to add to list`);
             var num = list.length + 1;
-            list.push(num + toadd);
+            list.push(num + "." + toadd);
             message.channel.send(`added to list!`);
         }
         if (subCommand === 'show') {
 
             const show = new Discord.MessageEmbed()
                 .setTitle(`To-do list!`)
-                .setDescription(list)
+                .setDescription("```css" + list + "```")
                 .setColor(message.member.displayHexColor);
             message.channel.send(show);
         }
