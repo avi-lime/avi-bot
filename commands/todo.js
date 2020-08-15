@@ -17,8 +17,10 @@ module.exports = {
             message.channel.send(`added to list!`);
         }
         if (subCommand === 'show') {
-            var i = 1++;
-            const show = list.map(i + list);
+            const show = new Discord.MessageEmbed()
+                .setTitle(`To-do list!`)
+                .setDescription(list)
+                .setColor(message.member.displayHexColor;
             message.channel.send(show);
         }
         if (subCommand === 'delete' || subCommand === 'clear') {
