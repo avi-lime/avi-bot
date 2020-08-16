@@ -29,8 +29,15 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content.match(/^𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲 Please type \`\!captcha \[Text From Image\]\` to continue\.\nGet a different captcha by typing any command\.$/) && message.author.id === '432616859263827988') {
-        message.guild.channels.cache.get('688109298852692055').send(`<@454307252392951819> captcha in ${message.channel} ${message.attachments}`);
+    if (message.content.match(/^(𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲|𝗽𝗹𝘂𝘁𝗼) Please type \`\!captcha \[Text From Image\]\` to continue\.\nGet a different captcha by typing any command\.$/) && message.author.id === '432616859263827988') {
+        const user = message.content.splice(1);
+        if (user === '𝗽𝗹𝘂𝘁𝗼') {
+            message.guild.channels.cache.get('688109298852692055').send(`<@629768073414574110> captcha in ${message.channel} ${message.attachments}`);
+        }
+        if (user === '𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲') {
+            message.guild.channels.cache.get('688109298852692055').send(`<@454307252392951819> captcha in ${message.channel} ${message.attachments}`);
+        }
+
     }
 });
 
