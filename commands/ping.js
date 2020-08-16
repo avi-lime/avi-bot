@@ -2,6 +2,11 @@ module.exports = {
     name: 'ping',
     description: 'shows ping',
     execute(msg) {
-        msg.channel.send('Pong: `' + `${Date.now() - msg.createdTimestamp}` + '`ms');
+        const ping = Date.now() - msg.createdTimestamp;
+        msg.channel.send('Pinging...').then(m => {
+            setTimeout(() => {
+                m.edit(`Pong! ${ping}ms`);
+            }, 1500);
+        });
     },
 };
