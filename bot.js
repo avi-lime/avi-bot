@@ -33,14 +33,16 @@ client.on('message', message => {
         const chan = message.guild.channels.cache.get('688109298852692055');
         if (message.content.startsWith('𝗽𝗹𝘂𝘁𝗼')) {
             const pluto = new Discord.MessageEmbed()
-                .setImage(message.attachments.url)
+                .setTitle(`Captcha`)
+                .setImage(message.attachments.array()[0].url)
                 .setColor('RED');
             chan.send(`<@629768073414574110> captcha in ${message.channel}`);
             chan.send(pluto);
         }
         if (message.content.startsWith('𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲')) {
             const chocolate = new Discord.MessageEmbed()
-                .setImage(message.attachments.url)
+                .setTitle(`Captcha`)
+                .setImage(message.attachments.array()[0].url)
                 .setColor('ORANGE');
             chan.send(`<@454307252392951819> captcha in ${message.channel}`);
             chan.send(chocolate);
