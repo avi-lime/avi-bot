@@ -26,6 +26,11 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('message', message => {
+    if (message.content.match(/^𝗰𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝗲 Please type \!captcha \[Text From Image\] to continue\.\nGet a different captcha by typing any command\.$/) || message.author.id === '432616859263827988') {
+        message.guild.channels.cache.get('688109298852692055').send(`<@454307252392951819> catcha in ${message.channel}`);
+    }
+});
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix) || msg.author.bot) return;
