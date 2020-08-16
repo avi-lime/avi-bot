@@ -50,7 +50,7 @@ client.on('message', message => {
 
     }
     if (message.content === 'test') {
-        channel('688109298852692055').send(`knock knock! someone there? testing on my test server`);
+        channel.id('688109298852692055').send(`knock knock! someone there? testing on my test server`);
     }
 });
 
