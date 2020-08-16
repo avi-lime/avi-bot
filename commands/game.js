@@ -8,8 +8,8 @@ module.exports = {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
         const subCommand = args[0].toLowerCase();
-
-        if (commandName === 'start') {
+        const userArgs = message.content.replace(prefix + commandName + " " + subCommand, '');
+        if (subCommand === 'start') {
             message.channel.send(`The game will start in...`).then(sentMessage => {
                 setTimeout(() => {
                     sentMessage.edit(`3`)

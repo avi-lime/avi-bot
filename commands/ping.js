@@ -5,7 +5,7 @@ module.exports = {
         const ping = Date.now() - msg.createdTimestamp;
         msg.channel.send('Pinging...').then(m => {
             setTimeout(() => {
-                m.edit(`Pong! ${ping}ms`);
+                m.edit(`Pong! \`${ping}ms\``);
             }, 1500);
         });
     },
