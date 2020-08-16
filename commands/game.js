@@ -14,17 +14,17 @@ module.exports = {
                 setTimeout(() => {
                     sentMessage.edit(`3`)
                 }, 2000);
-            }).then(sentMessage => {
+            }).then(sentMessage2 => {
                 setTimeout(() => {
-                    sentMessage.edit(`2`)
+                    sentMessage2.edit(`2`)
                 }, 1000);
-            }).then(sentMessage => {
+            }).then(sentMessage3 => {
                 setTimeout(() => {
-                    sentMessage.edit(`1`)
+                    sentMessage3.edit(`1`)
                 }, 1000);
-            }).then(sentMessage => {
+            }).then(sentMessage4 => {
                 setTimeout(() => {
-                    sentMessage.edit(`now!`)
+                    sentMessage4.edit(`now!`)
                 }, 1000);
             });
             setTimeout(() => {
