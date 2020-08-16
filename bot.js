@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const Discord = require('discord.js');
 const client = new Discord.Client({
-    disableMentions: "all"
+    disableMentions: "everyone"
 });
 const prefix = "=";
 
