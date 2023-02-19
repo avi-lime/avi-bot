@@ -1,3 +1,6 @@
 # avi bot 
 -----------
-I'm aliveeeeeeeee bisheesssss
+now NaruBot on discord
+
+shifted project to replit
+https://replit.com/@avi-lime/NaruBot
